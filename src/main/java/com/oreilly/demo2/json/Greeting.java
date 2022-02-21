@@ -18,6 +18,8 @@ public class Greeting {
         return message;
     }
 
+//    This part is not going to be visible in client computer via HTTP request and response
+//    They are always looking at getter
     @Override
     public String toString()
     {

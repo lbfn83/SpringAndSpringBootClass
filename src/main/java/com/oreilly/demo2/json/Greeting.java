@@ -1,8 +1,11 @@
 package com.oreilly.demo2.json;
 
+import org.springframework.stereotype.Component;
+
 // simplest POJO
+@Component
 public class Greeting {
-    private final String message;
+    private String message;
 
     // For deserialisation purposes this class must have a zero-arg constructor
 //    otherwise, in functional testing in REST will give you error => JSON parse error: Cannot construct instance of `com.oreilly.demo2.json.Greeting`
@@ -16,6 +19,10 @@ public class Greeting {
 
     public String getMessage() {
         return message;
+    }
+    public void setMessage(String message)
+    {
+        this.message = message;
     }
 
 //    This part is not going to be visible in client computer via HTTP request and response

@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class HelloRestContollerFunctionalTest {
 
+
     @Test
     public void greetWithName(@Autowired TestRestTemplate template)
     {

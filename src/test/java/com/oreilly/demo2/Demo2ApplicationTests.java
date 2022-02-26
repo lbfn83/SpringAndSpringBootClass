@@ -37,10 +37,11 @@ class Demo2ApplicationTests {
     @Test
     void getBeanTwice()
     {
-        Greeting greeting1 = context.getBean(Greeting.class);
-        Greeting greeting2 = context.getBean(Greeting.class);
-        greeting1.setMessage("What up?");
+        Greeting greeting1 = context.getBean("defaultGreeting",Greeting.class);
+        Greeting greeting2 = context.getBean("whatUpGreeting",Greeting.class);
+//        greeting1.setMessage("What up?");
+        System.out.println(greeting1.getMessage());
         System.out.println(greeting2.getMessage());
-        assertSame(greeting1, greeting2);
+//        assertSame(greeting1, greeting2);
     }
 }

@@ -3,7 +3,7 @@ package com.oreilly.demo2.json;
 import org.springframework.stereotype.Component;
 
 // simplest POJO
-@Component
+//@Component
 public class Greeting {
     private String message;
 

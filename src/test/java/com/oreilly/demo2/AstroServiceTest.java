@@ -16,8 +16,8 @@ public class AstroServiceTest {
     private AstroService service;
 
     @Test
-    void getAstronauts(){
-        AstroResult result = service.getAstronauts();
+    void getAstronautsRT(){
+        AstroResult result = service.getAstronautsRT();
         int number = result.getNumber();
         System.out.println("There are " + number + " people in space");
         List<Assignment> people = result.getPeople();
@@ -27,9 +27,18 @@ public class AstroServiceTest {
                 ()-> assertTrue(number >= 0),
                 ()->assertEquals(number, people.size())
         );
-
-
-
     }
+    @Test
+    void getAstronautsWC(){
+        AstroResult result = service.getAstronautsWC();
+        int number = result.getNumber();
+        System.out.println("There are " + number + " people in space");
+        List<Assignment> people = result.getPeople();
+        people.forEach(System.out::println);
 
+        assertAll(
+                ()-> assertTrue(number >= 0),
+                ()->assertEquals(number, people.size())
+        );
+    }
 }
